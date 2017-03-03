@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  <h1 align="center">Student Portfolio System</h1>
+
+
+  nav.navbar.navbar-inverse(data-spy='affix', data-offset-top='197')
+  .container-fluid
+  .navbar-header
+    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+      a.navbar-brand(href='#') Student Profile System
+      div
+      #myNavbar.collapse.navbar-collapse
+  .container
+    .jumbotron
+      h1.
+          Portfolios
+      ul
+        table.table.table-condensed
+          thead
+            tr
+              th <h2> Student Name </h2>
+              th <h2> Profile Picture </h2>
+              th <h2> Work </h2>
+              th <h2> Work 2 </h2>
+
+
+            tbody
+              for data in portfolio
+                .event
+                  span #{data.event}
+                  tr
+                  td  <h4> #{data.name} </h4>
+                  td
+                      img( class='input-img', width="200", height="200",src='#{data.profile}')
+                  td  <h4> #{data.work} </h4>
+                  td
+                      img( class='input-img', width="200", height="200",src='#{data.work1}')
